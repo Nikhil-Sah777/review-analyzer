@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 import csv
 from collections import Counter
 
@@ -54,3 +56,26 @@ print()
 print("Sentiment summary:", dict(counts))
 print("Most mentioned features:", feature_mentions.most_common(3))
 print("Most common complaints:", complaints.most_common(3))
+
+
+# ---- Dashboard ----
+labels = ["Positive", "Negative", "Neutral"]
+values = [counts[label] for label in labels]
+
+top = feature_mentions.most_common(5)
+names = [item[0] for item in top]
+numbers = [item[1] for item in top]
+
+fig, axes = plt.subplots(1, 2, figsize=(10, 4))
+
+axes[0].bar(labels, values, color=["green", "red", "gray"])
+axes[0].set_title("Review Sentiment")
+axes[0].set_ylabel("Number of reviews")
+
+axes[1].bar(names, numbers, color="steelblue")
+axes[1].set_title("Most Mentioned Features")
+axes[1].set_ylabel("Mentions")
+
+plt.tight_layout()
+plt.savefig("dashboard.png")
+plt.show()
