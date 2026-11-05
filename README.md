@@ -2,19 +2,24 @@
 
 ![Dashboard](dashboard.png)
 
-A beginner-friendly Python project that analyzes product reviews and labels each one as Positive, Negative or Neutral.
+A Python project that analyzes product reviews and labels each one as Positive, Negative or Neutral. It also finds the most mentioned product features and the most common complaints.
+
+## Results
+- Analyzed 20,000 real Flipkart product reviews
+- First version (simple word lists): 45.8% match with the dataset's labels
+- Improved version (VADER sentiment tool on review summary + text): **91.4%** match
+- Note: about 82% of the reviews in the dataset are positive, and the program is weakest at detecting Neutral reviews
+
+## Dataset
+[Flipkart Product reviews with sentiment Dataset](https://www.kaggle.com/datasets/niraliivaghani/flipkart-product-customer-reviews-dataset) by Nirali Vaghani on Kaggle. Download `Dataset-SA.csv`, rename it to `big_reviews.csv` and put it in the same folder as `analyzer.py`. (It is not included here because the file is large.)
 
 ## How to run
 1. Install Python
-2. Download `analyzer.py`
-3. Run: `python analyzer.py`
-
-## Sample output
-Positive: Great battery life and amazing camera. Love it!
-Negative: Terrible delivery, the phone arrived broken.
+2. Install the requirements: `python -m pip install -r requirements.txt`
+3. Add `big_reviews.csv` (see Dataset above)
+4. Run: `python analyzer.py`
 
 ## Planned upgrades
-- Detect keywords (battery, camera, price)
-- Find common complaints
-- Read reviews from a CSV file
-- Add a simple dashboard
+- Better detection of Neutral reviews
+- Show complaints per product
+- Interactive web dashboard
