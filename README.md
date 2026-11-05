@@ -2,6 +2,8 @@
 
 ![Dashboard](dashboard.png)
 
+![Web app](app-screenshot.png)
+
 A Python project that analyzes product reviews and labels each one as Positive, Negative or Neutral. It also finds the most mentioned product features and the most common complaints.
 
 ## Results
@@ -17,9 +19,10 @@ A Python project that analyzes product reviews and labels each one as Positive, 
 1. Install Python
 2. Install the requirements: `python -m pip install -r requirements.txt`
 3. Add `big_reviews.csv` (see Dataset above)
-4. Run: `python analyzer.py`
+4. Run the web dashboard: `python -m streamlit run app.py`
+   (or the simple script version: `python analyzer.py`)
 
+   
 ## Planned upgrades
 - Better detection of Neutral reviews
 - Show complaints per product
-- Interactive web dashboard
