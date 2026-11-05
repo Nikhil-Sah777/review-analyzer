@@ -1,5 +1,7 @@
 # Review Analyzer
 
+![Dashboard](dashboard.png)
+
 A beginner-friendly Python project that analyzes product reviews and labels each one as Positive, Negative or Neutral.
 
 ## How to run
