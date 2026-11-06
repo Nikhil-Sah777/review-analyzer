@@ -1,3 +1,4 @@
+import os
 import re
 from collections import Counter
 
@@ -7,7 +8,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 st.set_page_config(page_title="Review Analyzer", page_icon="📊", layout="wide")
 
-FILE_NAME = "big_reviews.csv"
+FILE_NAME = "big_reviews.csv" if os.path.exists("big_reviews.csv") else "sample_reviews.csv"
 FEATURES = ["battery", "camera", "sound", "display", "screen", "delivery",
             "packaging", "price", "quality", "performance", "design",
             "service", "value"]
@@ -51,7 +52,7 @@ def count_features(df, only_negative=False):
 st.title("📊 Review Analyzer")
 st.write("Turns customer reviews into sentiment, top features and common complaints.")
 
-max_rows = st.sidebar.slider("Number of reviews to analyze", 1000, 50000, 20000, step=1000)
+max_rows = st.sidebar.slider("Number of reviews to analyze", 1000, 30000, 20000, step=1000)
 df = load_and_analyze(max_rows)
 
 accuracy = (df["predicted"] == df["actual"]).mean() * 100
