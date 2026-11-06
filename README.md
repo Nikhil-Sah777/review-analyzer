@@ -1,5 +1,7 @@
 # Review Analyzer
 
+**🔴 Live demo:** [Open the app](https://review-analyzer-nikhil.streamlit.app/)
+
 ![Dashboard](dashboard.png)
 
 ![Web app](app-screenshot.png)
@@ -14,6 +16,7 @@ A Python project that analyzes product reviews and labels each one as Positive, 
 
 ## Dataset
 [Flipkart Product reviews with sentiment Dataset](https://www.kaggle.com/datasets/niraliivaghani/flipkart-product-customer-reviews-dataset) by Nirali Vaghani on Kaggle. Download `Dataset-SA.csv`, rename it to `big_reviews.csv` and put it in the same folder as `analyzer.py`. (It is not included here because the file is large.)
+The live demo uses a random sample of 30,000 reviews.
 
 ## How to run
 1. Install Python
